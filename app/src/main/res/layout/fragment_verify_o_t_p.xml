@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/verifyOTP"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/splash_screen_bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VeifyOTP.VerifyOTP">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootcons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:isScrollContainer="true"
+            app:layout_constraintBottom_toTopOf="@+id/bottomContainer"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/bottomContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/verifyotplowerimg"
+
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_marginTop="20dp"
+                android:text="OTP"
+                android:textSize="30dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginEnd="15dp"
+                android:text="Please Enter the OTP send to your Registered mobile number."
+                android:textSize="20dp"
+                />
+
+            <com.chaos.view.PinView
+                android:id="@+id/verifyotppin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_gravity="center"
+                app:itemSpacing="10dp"
+                app:itemCount="6"
+                android:inputType="number"
+                app:lineColor="#FFBE47"
+                app:lineWidth="2dp"
+                app:itemRadius="10dp"
+                app:itemHeight="60dp"
+                style="@style/PinWidget.PinView"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/verifyotpconfirm"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/educationaluibutton"
+                android:textColor="#808080"
+                android:fontFamily="sans-serif-condensed-light"
+                android:layout_gravity="center"
+                android:text="Confirm"
+                android:textSize="20dp"
+                android:textCursorDrawable="@drawable/cursor"
+                android:textAllCaps="false"
+                android:layout_marginBottom="10dp"
+                />
+
+            <TextView
+                android:id="@+id/termsconditiontext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:text="Terms and Condition"
+                android:textSize="15dp"
+               android:layout_marginBottom="15dp"
+                android:layout_gravity="center"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

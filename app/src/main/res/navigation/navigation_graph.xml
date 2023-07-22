@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/splash_Screen">
+
+    <fragment
+        android:id="@+id/splash_Screen"
+        android:name="www.zentorc.com.SplashScreen.Splash_Screen"
+        android:label="fragment_splash__screen"
+        tools:layout="@layout/fragment_splash__screen" >
+        <action
+            android:id="@+id/action_splash_Screen_to_educational_UI"
+            app:destination="@id/educational_UI"
+            app:popUpTo="@id/educational_UI"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_splash_Screen_to_hardware_Not_Found_UI"
+            app:destination="@id/hardware_Not_Found_UI" />
+        <action
+            android:id="@+id/action_splash_Screen_to_onBoardingScreen"
+            app:destination="@id/onBoardingScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/educational_UI"
+        android:name="www.zentorc.com.SplashScreen.Educational_UI"
+        android:label="fragment_educational__u_i"
+        tools:layout="@layout/fragment_educational__u_i" >
+        <action
+            android:id="@+id/action_educational_UI_to_splash_Screen"
+            app:destination="@id/splash_Screen"
+            app:popUpTo="@id/splash_Screen"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/hardware_Not_Found_UI"
+        android:name="www.zentorc.com.SplashScreen.Hardware_Not_Found_UI"
+        android:label="fragment_hardware__not__found__u_i"
+        tools:layout="@layout/fragment_hardware__not__found__u_i" />
+    <fragment
+        android:id="@+id/onBoardingScreen"
+        android:name="www.zentorc.com.OnBoardingScreen.OnBoardingScreen"
+        android:label="fragment_on_boarding_screen"
+        tools:layout="@layout/fragment_on_boarding_screen" >
+        <action
+            android:id="@+id/action_onBoardingScreen_to_userLogin"
+            app:destination="@id/userLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/userLogin"
+        android:name="www.zentorc.com.UserLoginScreen.UserLogin"
+        android:label="fragment_user_login"
+        tools:layout="@layout/fragment_user_login" >
+        <action
+            android:id="@+id/action_userLogin_to_verifyOTP"
+            app:destination="@id/verifyOTP" />
+        <action
+            android:id="@+id/action_userLogin_to_signUpScreen"
+            app:destination="@id/signUpScreen" />
+        <argument
+            android:name="SignUpUserData"
+            app:argType="www.zentorc.com.DTO.SignUpDTO"
+            app:nullable="true" />
+        <argument
+            android:name="Method"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/verifyOTP"
+        android:name="www.zentorc.com.VeifyOTP.VerifyOTP"
+        android:label="fragment_verify_o_t_p"
+        tools:layout="@layout/fragment_verify_o_t_p" >
+        <argument
+            android:name="Verification"
+            app:argType="string" />
+        <argument
+            android:name="Method"
+            app:argType="string" />
+        <argument
+            android:name="SingnUpDTO"
+            app:argType="www.zentorc.com.DTO.SignUpDTO"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_verifyOTP_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpScreen"
+        android:name="www.zentorc.com.SignUpScreen.SignUpScreen"
+        android:label="SignUpScreen" >
+        <action
+            android:id="@+id/action_signUpScreen_to_userLogin"
+            app:destination="@id/userLogin" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="www.zentorc.com.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/riderProfile"
+        android:name="www.zentorc.com.RiderProfile.RiderProfile"
+        android:label="fragment_rider_profile"
+        tools:layout="@layout/fragment_rider_profile" />
+    <fragment
+        android:id="@+id/riderLogOut"
+        android:name="www.zentorc.com.RiderLogOut.RiderLogOut"
+        android:label="fragment_rider_log_out"
+        tools:layout="@layout/fragment_rider_log_out" />
+</navigation>
